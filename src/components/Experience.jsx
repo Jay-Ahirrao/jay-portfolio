@@ -101,8 +101,8 @@ const Experience = () => {
 
   // Smooth out the scroll progress
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 35,
+    stiffness: 150,
+    damping: 40,
     restDelta: 0.001
   });
 

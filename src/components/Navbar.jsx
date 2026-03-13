@@ -24,6 +24,22 @@ const Navbar = ({ onOpenContact }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,7 +48,11 @@ const Navbar = ({ onOpenContact }) => {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold tracking-tighter text-white">
+          <a 
+            href="#home" 
+            onClick={(e) => handleNavClick(e, '#home')}
+            className="text-xl font-bold tracking-tighter text-white"
+          >
             Jay<span className="text-neutral-500">Codes</span>
           </a>
 
@@ -42,6 +62,7 @@ const Navbar = ({ onOpenContact }) => {
               <a 
                 key={link.name} 
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
               >
                 {link.name}
@@ -79,7 +100,7 @@ const Navbar = ({ onOpenContact }) => {
                 <a 
                   key={link.name} 
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-base font-medium text-neutral-400 hover:text-white transition-colors py-2"
                 >
                   {link.name}

@@ -1,3 +1,6 @@
+import hmmImage from '../assets/hmmproject.jpeg';
+import everytubeImage from '../assets/everytube-logo.png';
+
 export const projects = [
   {
     id: 1,
@@ -33,7 +36,7 @@ export const projects = [
     github: "#",
     live: "#",
     features: ["Automated merit calculation", "Database integration", "API connectivity", "Reporting"],
-    image: "./public/hmmproject.jpeg",
+    image: hmmImage,
   },
   {
     id: 4,
@@ -45,6 +48,6 @@ export const projects = [
     github: "https://github.com/Jay-Ahirrao/everytube",
     live: "https://everytube.zennin.tech",
     features: ["JWT authentication", "RBAC authorization", "Secure media access", "Scalable backend"],
-    image: "./public/everytube-logo.png",
+    image: everytubeImage,
   },
 ];

@@ -8,19 +8,19 @@ const Hero = ({ onOpenContact }) => {
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
-          
+
           {/* Left Column: Text Content */}
-          <div className="w-full lg:w-auto lg:max-w-xl text-center lg:text-left">
+          <div className="w-full lg:w-auto lg:max-w-xxl text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight mb-4">
-               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-900 via-red-600 to-orange-500">Jay U. Ahirrao</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-900 via-red-600 to-orange-500">Jay U. Ahirrao</span>
               </h1>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,9 +49,14 @@ const Hero = ({ onOpenContact }) => {
             >
 
               <MagneticButton>
-                <button className="p-4 mr-2 rounded-xl bg-white text-black hover:bg-neutral-200 transition-colors flex items-center justify-center hover:scale-105 duration-700">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 mr-2 rounded-xl bg-white text-black hover:bg-neutral-200 transition-colors flex items-center justify-center hover:scale-105 duration-700"
+                >
                   <FileText size={24} /><span className="ml-2 font-medium">Resume</span>
-                </button>
+                </a>
               </MagneticButton>
               <MagneticButton>
                 <a href="https://github.com/Jay-Ahirrao" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 text-white hover:bg-neutral-800 transition-colors flex items-center justify-center hover:scale-110 duration-300">
@@ -76,13 +81,13 @@ const Hero = ({ onOpenContact }) => {
             >
               {/* Outer Glow behind image */}
               <div className="absolute inset-4 bg-red-600/10 rounded-3xl blur-xl" />
-              
+
               {/* Image Container */}
               <div className="relative w-64 h-80 md:w-72 md:h-96 lg:w-[280px] lg:h-[380px] rounded-3xl overflow-hidden border border-white/20 bg-neutral-900 shadow-2xl">
-                <img 
-                  src="/main.png" 
-                  alt="jay is gone, he'll not be here everytime" 
-                  className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-800"  
+                <img
+                  src="/main.png"
+                  alt="jay is gone, he'll not be here everytime"
+                  className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-800"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';

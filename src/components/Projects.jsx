@@ -18,7 +18,7 @@ const iconMap = {
   "JDBC": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg",
   "EJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ejs/ejs-original.svg",
   "Bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-  "JWT": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jsonwebtokens/jsonwebtokens-plain.svg",
+  "JWT": "https://jwt.io/img/pic_logo.svg",
   "Azure VMs": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
   "Flask": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
   "Machine Learning": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
@@ -84,14 +84,16 @@ const Projects = () => {
                       </h3>
                     </div>
                     <div className="flex gap-4 flex-shrink-0">
-                      <MagneticButton>
-                        <a href={project.github} className="p-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black transition-all inline-flex items-center justify-center">
-                          <Github size={20} />
-                        </a>
-                      </MagneticButton>
+                      {project.github !== "#" && (
+                        <MagneticButton>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black transition-all inline-flex items-center justify-center">
+                            <Github size={20} />
+                          </a>
+                        </MagneticButton>
+                      )}
                       {project.live !== "#" && (
                         <MagneticButton>
-                          <a href={project.live} className="p-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black transition-all inline-flex items-center justify-center">
+                          <a href={project.live} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-white/10 border border-white/20 text-white hover:bg-white hover:text-black transition-all inline-flex items-center justify-center">
                             <ExternalLink size={20} />
                           </a>
                         </MagneticButton>
