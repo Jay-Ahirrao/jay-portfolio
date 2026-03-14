@@ -88,11 +88,22 @@ const Blogs = () => {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <div className="text-center mb-16">
-            <h5 className="font-mono text-xs tracking-widest text-neutral-500 uppercase mb-4">
+          <div className="text-center mb-16 relative z-20">
+            <h5 className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase mb-4">
               My Writings
             </h5>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Latest <span className="text-neutral-500">Articles</span></h2>
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-4 text-white tracking-tight"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
+              Latest{' '}
+              <span 
+                className="italic animate-gradient-text font-medium" 
+                style={{ paddingRight: '10px' }}
+              >
+                Articles
+              </span>
+            </h2>
             <p className="text-neutral-400 max-w-lg mx-auto">Thoughts, deep dives, and technical guides from my personal blog.</p>
           </div>
 
@@ -124,9 +135,10 @@ const Blogs = () => {
                   key={blog.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group flex flex-col rounded-2xl bg-neutral-900 border border-white/5 hover:border-white/20 transition-all duration-500 overflow-hidden hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+                  whileHover={{ y: -8 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: Math.min(index * 0.08, 0.24), duration: 0.4, ease: 'easeOut' }}
+                  className="group flex flex-col rounded-2xl bg-neutral-900 border border-white/5 hover:border-white/20 transition-[border-color,box-shadow] duration-1200 overflow-hidden hover:shadow-[0_0_35px_rgba(255,255,255,0.09)]"
                 >
                   {/* Blog Image */}
                   <div className="aspect-video w-full overflow-hidden relative">
@@ -134,7 +146,9 @@ const Blogs = () => {
                         <img 
                             src={blog.image} 
                             alt={blog.title} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                     ) : (
                         <div className="w-full h-full bg-neutral-800 flex items-center justify-center">

@@ -15,7 +15,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen relative text-white selection:bg-neutral-800 selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen relative text-white selection:bg-neutral-800 selection:text-white font-sans antialiased">
       <Background />
       <div className="relative z-10">
         <Navbar onOpenContact={() => setIsModalOpen(true)} />

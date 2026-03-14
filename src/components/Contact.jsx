@@ -13,11 +13,22 @@ const Contact = ({ onOpenContact }) => {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="mb-12">
-            <h5 className="font-mono text-xs tracking-widest text-neutral-400 uppercase mb-6">
-              Whats Next?
+          <div className="mb-12 relative z-20">
+            <h5 className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase mb-6">
+              What's Next?
             </h5>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h2>
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-4 text-white tracking-tight"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
+              Get In{' '}
+              <span 
+                className="italic animate-gradient-text font-medium" 
+                style={{ paddingRight: '10px' }}
+              >
+                Touch
+              </span>
+            </h2>
             <p className="text-neutral-400 text-lg max-w-lg mx-auto">
               Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>

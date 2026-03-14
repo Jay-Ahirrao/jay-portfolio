@@ -42,14 +42,14 @@ const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.07
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } }
   };
 
   return (
@@ -61,18 +61,29 @@ const Skills = () => {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <div className="text-center mb-16">
-            <h5 className="font-mono text-xs tracking-widest text-neutral-400 uppercase mb-6">
+          <div className="text-center mb-16 relative z-20">
+            <h5 className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase mb-6">
               Core Technologies
             </h5>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-white">Skills <span className="text-neutral-500">& Tools</span></h2>
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-4 text-white tracking-tight"
+              style={{ fontFamily: '"Playfair Display", serif' }}
+            >
+              Technical{' '}
+              <span 
+                className="italic animate-gradient-text font-medium" 
+                style={{ paddingRight: '10px' }}
+              >
+                Arsenal
+              </span>
+            </h2>
           </div>
 
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-60px' }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {skills.map((skillGroup, index) => (
@@ -94,7 +105,11 @@ const Skills = () => {
                         <img 
                           src={iconMap[skill]} 
                           alt={`${skill} icon`} 
-                          className={`w-5 h-5 object-contain ${(skill === "Express" || skill === "Express.js" || skill === "Framer Motion" || skill === "EJS") ? "invert" : ""}`} 
+                          loading="lazy"
+                          decoding="async"
+                          width="20"
+                          height="20"
+                          className={`w-5 h-5 object-contain ${(skill === 'Express' || skill === 'Express.js' || skill === 'Framer Motion' || skill === 'EJS') ? 'invert' : ''}`} 
                         />
                       )}
                       {skill}

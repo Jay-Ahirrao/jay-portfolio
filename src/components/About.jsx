@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
-const IMAGES = ['/4.jpg', '/2.jpg', '/3.jpg'];
+const IMAGES = ['/3.jpg', '/4.jpg', '/2.jpg'];
 
 const About = () => {
   const [imageList, setImageList] = useState(IMAGES);
@@ -29,10 +29,22 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="max-w-xl"
             >
-              <h5 className="font-mono text-xs tracking-widest text-neutral-500 uppercase mb-4">
-                The Backstory
+              <h5 className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase mb-4">
+                More About Me
               </h5>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">About <span className="text-neutral-500">Me</span></h2>
+              <h2
+                className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] mb-8 text-white tracking-tight"
+                style={{ fontFamily: '"Playfair Display", serif' }}
+              >
+                I'm Jay, a <br />
+                creative{' '}
+                <span
+                  className="italic animate-gradient-text font-medium"
+                  style={{ paddingRight: '10px' }}
+                >
+                  engineer
+                </span>
+              </h2>
 
               <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
                 <p>
@@ -83,7 +95,7 @@ const About = () => {
 
           {/* Right Column: Draggable 3D Fan Carousel */}
           <div className="w-full lg:w-1/2 flex justify-center items-center py-10 relative perspective-[1200px]">
-            <div className="relative w-48 h-64 md:w-56 md:h-72 lg:w-[280px] lg:h-[380px]  ml-20 flex items-center justify-center">
+            <div className="relative w-48 h-64 md:w-56 md:h-72 lg:w-[280px] lg:h-[380px]  lg:ml-20 flex items-center justify-center">
               {imageList.map((img, index) => {
                 const isTop = index === 0;
                 const isSecond = index === 1;
