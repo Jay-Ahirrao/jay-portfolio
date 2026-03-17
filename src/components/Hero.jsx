@@ -109,8 +109,8 @@ const Hero = ({ onOpenContact }) => {
               </div>
             </div>
 
-            {/* Badge: Backend */}
-            <div className="absolute top-[15%] right-[5%] lg:-right-4 px-4 py-2.5 rounded-xl bg-neutral-950/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-20 flex items-center gap-3">
+            {/* Badge: Backend - Removed Currently*/}
+            {/* <div className="absolute top-[15%] right-[5%] lg:-right-4 px-4 py-2.5 rounded-xl bg-neutral-950/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-20 flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center shadow-lg shadow-pink-500/20">
                 <Code2 size={16} className="text-white" />
               </div>
@@ -118,7 +118,7 @@ const Hero = ({ onOpenContact }) => {
                 <div className="text-white font-medium text-[13px] tracking-wide">Backend Systems</div>
                 <div className="text-neutral-400 text-[11px]">API & Architecture</div>
               </div>
-            </div>
+            </div> */}
 
             {/* Badge: Available */}
             <div className="absolute bottom-[20%] left-[5%] lg:-left-4 px-4 py-2.5 rounded-xl bg-neutral-950/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)] z-20 flex items-center gap-3">
