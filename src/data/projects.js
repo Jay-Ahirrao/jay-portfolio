@@ -24,7 +24,7 @@ export const projects = [
     github: "https://github.com/premj01/banking-fraud-detection",
     live: "#",
     features: ["Real-time fraud detection", "Random Forest & XGBoost models", "Isolation Forest for anomaly detection", "Data visualization dashboard", "PostgreSQL + NeonDB ORM"],
-    image: "/jay-portfolio/public/mockup_fraudshield1.png",
+    image: "/mockup_fraudshield1.png",
   },
   {
     id: 3,
