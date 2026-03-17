@@ -29,7 +29,7 @@ const Hero = ({ onOpenContact }) => {
               <span className="text-white">Jay</span>{' '}
               <span
                 className="italic text-transparent bg-clip-text bg-gradient-to-br from-white via-neutral-300 to-neutral-600"
-                style={{ fontFamily: '"Playfair Display", serif', paddingRight: '0.05em' }}
+                style={{ fontFamily: '"Marcellus", serif', paddingRight: '0.05em' }}
               >
                 Ahirrao
               </span>

@@ -7,7 +7,7 @@ export const experience = [
     location: "Nashik, India",
     type: "Education",
     responsibilities: [
-      "Completed Diploma in Computer Technology with a high score of 90.88%.",
+      "Completed Diploma in Computer Technology with a score of 90.88%.",
       "Gained foundational knowledge in Computer Hardware, Networking, and Programming."
     ],
     techStack: ["Fundamentals of Computing", "C/C++", "Java", "Web Development", "VB.NET", "MS Office", "Networking", "System Administration", "Hardware Support"]
@@ -50,7 +50,7 @@ export const experience = [
     type: "Education",
     responsibilities: [
       "Pursuing Bachelor of Technology in Information Technology.",
-      "CGPA of 8.87."
+      "CGPA of 8.88."
     ],
     techStack: ["Data Structures", "Algorithms", "Software Engineering", "DBMS"]
   }
