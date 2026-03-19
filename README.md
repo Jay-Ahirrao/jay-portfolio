@@ -1,16 +1,43 @@
-# React + Vite
+# 🌐 Jay Ahirrao – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website. Its always in Developement and I'm continuosly refining it every now and then. Any Feedback is Welcome.
 
-Currently, two official plugins are available:
+🔗 **Live Website:** https://jay.zennin.tech  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I’m a 3rd-year BTech Computer Science student focused on building efficient and scalable web applications.
 
-## Expanding the ESLint configuration
+- 💻 Full Stack Developer (MERN)
+- 🧠 Exploring AI, ML, Cloud & System Design
+- ⚡ Passionate about problem-solving and development
+- 🎯 Open to remote internships and opportunities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- HTML, CSS, JavaScript  
+- React.js  
+- Node.js, Express.js  
+- MongoDB  
+- Tailwind CSS  
+- Git & GitHub  
+- CMS (Work in Progress!)
+---
+
+## ⚠️ Usage & License
+
+This portfolio and its source code are **not open source**.
+
+- 🚫 Copying, modifying, or redistributing any part of this project without permission is not allowed  
+- 📩 For usage requests, please contact me directly  
+
+---
+
+## 📬 Contact
+
+- 📧 Email 1: jayahirrao11@gmail.com  
+- 📧 Email 2: jayahirrao22@gmail.com  
