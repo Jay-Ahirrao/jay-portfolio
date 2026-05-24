@@ -1,6 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
+import { 
+  Code2, 
+  GitBranch, 
+  Database, 
+  Cpu, 
+  Network, 
+  Workflow, 
+  Layers 
+} from 'lucide-react';
 
 const iconMap = {
   "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
@@ -36,30 +45,56 @@ const iconMap = {
   "JWT": "https://jwt.io/img/pic_logo.svg",
 };
 
+const lucideMap = {
+  "Data Structures and Algorithms": GitBranch,
+  "Object Oriented Programming": Layers,
+  "Database Management Systems": Database,
+  "Operating Systems": Cpu,
+  "Computer Networks": Network,
+  "System Design": Workflow,
+};
+
 const Skills = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.07
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const groupVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } }
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.3, 
+        ease: 'easeOut' 
+      } 
+    }
   };
 
   return (
-    <section id="skills" className="py-24 relative z-10">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 relative z-10">
+      <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
+          className="w-full"
         >
           <div className="text-center mb-16 relative z-20">
             <h5 className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase mb-6">
@@ -79,42 +114,63 @@ const Skills = () => {
             </h2>
           </div>
 
+          {/* Staggered container of category groups */}
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="space-y-8"
           >
-            {skills.map((skillGroup, index) => (
+            {skills.map((group, groupIndex) => (
               <motion.div 
-                key={index}
-                variants={itemVariants}
-                className={`p-8 rounded-3xl bg-neutral-900 border border-white/5 hover:border-white/10 transition-colors shadow-xl ${skillGroup.category === "Core Computer Science" ? "md:col-span-2" : ""}`}
+                key={groupIndex} 
+                variants={groupVariants}
+                className="space-y-3"
               >
-                <h3 className="text-2xl font-semibold mb-8 text-white tracking-wide">
-                  {skillGroup.category}
+                {/* Category label with intense glowing white text */}
+                <h3 
+                  className="font-mono text-xs tracking-[0.25em] text-white font-semibold uppercase"
+                  style={{ textShadow: '0 0 8px rgba(255, 255, 255, 0.4)' }}
+                >
+                  {group.category}
                 </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skillGroup.items.map((skill, i) => (
-                    <span 
-                      key={i} 
-                      className="px-4 py-2 text-sm rounded-xl bg-black border border-white/10 text-neutral-300 flex items-center gap-2 hover:bg-neutral-800 transition-colors cursor-default"
-                    >
-                      {iconMap[skill] && (
-                        <img 
-                          src={iconMap[skill]} 
-                          alt={`${skill} icon`} 
-                          loading="lazy"
-                          decoding="async"
-                          width="20"
-                          height="20"
-                          className={`w-5 h-5 object-contain ${(skill === 'Express' || skill === 'Express.js' || skill === 'Framer Motion' || skill === 'EJS') ? 'invert' : ''}`} 
-                        />
-                      )}
-                      {skill}
-                    </span>
-                  ))}
+
+                {/* Wrapping layout of skill capsules for this category */}
+                <div className="flex flex-wrap gap-2.5">
+                  {group.items.map((skill, index) => {
+                    const DeviconUrl = iconMap[skill];
+                    const LucideIcon = lucideMap[skill];
+
+                    return (
+                      <motion.div 
+                        key={index}
+                        variants={itemVariants}
+                        whileHover={{ 
+                          y: -2,
+                          backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                          borderColor: 'rgba(255, 255, 255, 0.12)'
+                        }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                        className="px-3.5 py-1.5 text-xs font-medium rounded-lg bg-neutral-900 border border-white/5 text-neutral-300 flex items-center gap-2 shadow-sm cursor-default select-none"
+                      >
+                        {DeviconUrl ? (
+                          <img 
+                            src={DeviconUrl} 
+                            alt={`${skill} icon`} 
+                            loading="lazy"
+                            decoding="async"
+                            className={`w-4 h-4 object-contain ${(skill === 'Express' || skill === 'Express.js' || skill === 'Framer Motion' || skill === 'EJS') ? 'invert' : ''}`} 
+                          />
+                        ) : LucideIcon ? (
+                          <LucideIcon className="w-4 h-4 text-neutral-400 shrink-0" />
+                        ) : (
+                          <Code2 className="w-4 h-4 text-neutral-400 shrink-0" />
+                        )}
+                        <span>{skill}</span>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </motion.div>
             ))}

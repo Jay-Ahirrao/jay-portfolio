@@ -137,4 +137,5 @@
   .hero-fade-in-delay {
     animation: heroFadeIn 0.7s 0.2s ease-out both;
   }
+
 }

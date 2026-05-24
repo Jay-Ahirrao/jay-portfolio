@@ -114,7 +114,7 @@ const Blogs = () => {
               ))}
             </div>
           ) : error || blogs.length === 0 ? (
-            <div className="text-center py-20 bg-neutral-900/50 rounded-3xl border border-white/5">
+            <div className="text-center py-20 bg-neutral-900 rounded-3xl border border-white/5">
                 <p className="text-neutral-500 font-mono text-sm mb-4 italic">Unable to fetch latest articles directly at the moment.</p>
                 <a 
                     href={`https://hashnode.com/@${HASHNODE_USERNAME}`} 

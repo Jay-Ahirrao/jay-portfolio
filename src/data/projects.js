@@ -12,7 +12,7 @@ export const projects = [
     github: "https://github.com/Jay-Ahirrao/SereniStay",
     live: "https://serenistay.onrender.com/",
     features: ["Role based access control", "MVC architecture", "Centralized error handling", "Joi validation"],
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800",
+    images: ["https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800"],
   },
   {
     id: 2,
@@ -24,7 +24,14 @@ export const projects = [
     github: "https://github.com/premj01/banking-fraud-detection",
     live: "#",
     features: ["Real-time fraud detection", "Random Forest & XGBoost models", "Isolation Forest for anomaly detection", "Data visualization dashboard", "PostgreSQL + NeonDB ORM"],
-    image: "/mockup_fraudshield1.png",
+    images: [
+      "/mockup_fraudshield1.png",
+      "/fraudshieldp1.png",
+      "/fraudshieldp2.png",
+      "/fraudshieldp3.png",
+      "/fraudshieldp4.png",
+      "/fraudshieldp5.png"
+    ],
   },
   {
     id: 3,
@@ -42,7 +49,10 @@ export const projects = [
       "Responsive design for desktop and tablets",
       "Clean component-based UI architecture"
     ],
-    image: "/secureflashui.png"
+    images: [
+      "/secureflashui.png",
+      "/zennitui.png"
+    ]
   },
   {
     id: 4,
@@ -54,7 +64,7 @@ export const projects = [
     github: "#",
     live: "#",
     features: ["Automated merit calculation", "Database integration", "API connectivity", "Reporting"],
-    image: hmmImage,
+    images: [hmmImage],
   },
   {
     id: 5,
@@ -66,6 +76,6 @@ export const projects = [
     github: "https://github.com/Jay-Ahirrao/everytube",
     live: "https://everytube.zennin.tech",
     features: ["JWT authentication", "RBAC authorization", "Secure media access", "Scalable backend"],
-    image: everytubeImage,
+    images: [everytubeImage],
   },
 ];

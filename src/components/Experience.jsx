@@ -176,7 +176,9 @@ const Experience = () => {
             style={{
               left: '30%',
               translateX: '-50%',
-              height: lineHeight,
+              scaleY: smoothProgress,
+              originY: 0,
+              height: '100%',
               background: 'linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(147,197,253,0.75) 40%, rgba(192,132,252,0.55) 80%, transparent 100%)',
               boxShadow: '0 0 6px rgba(147,197,253,0.4)',
             }}

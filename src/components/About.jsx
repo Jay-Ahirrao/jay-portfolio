@@ -93,9 +93,9 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Right Column: Draggable 3D Fan Carousel */}
-          <div className="w-full lg:w-1/2 flex justify-center items-center py-10 relative perspective-[1200px]">
-            <div className="relative w-48 h-64 md:w-56 md:h-72 lg:w-[280px] lg:h-[380px]  lg:ml-20 flex items-center justify-center">
+          {/* Right Column: Draggable Photo Stack Carousel */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center py-12 relative">
+            <div className="relative w-48 h-64 md:w-56 md:h-72 lg:w-[280px] lg:h-[380px] lg:ml-20 flex items-center justify-center">
               {imageList.map((img, index) => {
                 const isTop = index === 0;
                 const isSecond = index === 1;
@@ -106,40 +106,47 @@ const About = () => {
                     key={img}
                     drag={isTop ? "x" : false}
                     dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.65}
                     onDragEnd={(e, info) => {
-                      if (Math.abs(info.offset.x) > 100) {
+                      if (Math.abs(info.offset.x) > 120) {
                         moveToEnd(index);
                       }
                     }}
                     animate={{
-                      scale: isTop ? 1 : 0.8,
-                      x: isTop ? 0 : isSecond ? -80 : 80,
-                      rotateY: isTop ? 0 : isSecond ? -20 : 20,
-                      zIndex: isTop ? 30 : 10,
-                      opacity: isTop ? 1 : 0.4,
-                      filter: isTop ? "grayscale(1) blur(0px)" : "grayscale(1) blur(2px)",
+                      scale: isTop ? 1 : isSecond ? 0.95 : 0.90,
+                      y: isTop ? 0 : isSecond ? 12 : 24,
+                      x: isTop ? 0 : isSecond ? 8 : -8,
+                      rotate: isTop ? 0 : isSecond ? 3 : -4,
+                      zIndex: isTop ? 30 : isSecond ? 20 : 10,
+                      opacity: isTop ? 1 : isSecond ? 0.85 : 0.65,
+                      filter: isTop ? "grayscale(0) blur(0px)" : isSecond ? "grayscale(0.3) blur(0.5px)" : "grayscale(0.6) blur(1.5px)",
                     }}
-                    whileHover={isTop ? { scale: 1.05 } : {}}
-                    transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                    className={`absolute rounded-3xl bg-neutral-900 border border-white/20 shadow-2xl overflow-hidden bg-cover bg-center ${isTop ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
+                    whileHover={isTop ? { scale: 1.03, y: -4, transition: { duration: 0.2 } } : {}}
+                    transition={{ type: "spring", stiffness: 220, damping: 26 }}
+                    className={`absolute rounded-3xl bg-neutral-900 border border-white/10 shadow-2xl overflow-hidden bg-cover bg-center ${isTop ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
                     style={{
                       backgroundImage: `url('${img}')`,
-                      width: isTop ? '100%' : '85%',
-                      height: isTop ? '100%' : '85%',
+                      width: '100%',
+                      height: '100%',
                     }}
                   >
                     {!isTop && (
-                      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+                      <div className="absolute inset-0 bg-black/30 backdrop-blur-[0.5px]" />
                     )}
 
                     {isTop && (
                       <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-center p-4 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
-                        <span className="text-white text-sm font-bold tracking-widest uppercase">Gallery</span>
+                        <span className="text-white text-xs font-mono tracking-widest uppercase">Gallery</span>
                       </div>
                     )}
                   </motion.div>
                 );
               })}
+            </div>
+
+            {/* Swipe hint */}
+            <div className="mt-12 lg:ml-20 flex items-center gap-2 text-neutral-500 text-[10px] font-mono tracking-widest uppercase select-none pointer-events-none animate-pulse">
+              <span>Swipe photo to browse</span>
             </div>
           </div>
 
