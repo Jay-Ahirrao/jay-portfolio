@@ -54,6 +54,8 @@ const lucideMap = {
   "System Design": Workflow,
 };
 
+const INVERT_SKILLS = ["Express", "Express.js", "Framer Motion", "EJS"];
+
 const Skills = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -160,7 +162,7 @@ const Skills = () => {
                             alt={`${skill} icon`} 
                             loading="lazy"
                             decoding="async"
-                            className={`w-4 h-4 object-contain ${(skill === 'Express' || skill === 'Express.js' || skill === 'Framer Motion' || skill === 'EJS') ? 'invert' : ''}`} 
+                            className={`w-4 h-4 object-contain ${INVERT_SKILLS.includes(skill) ? 'invert' : ''}`} 
                           />
                         ) : LucideIcon ? (
                           <LucideIcon className="w-4 h-4 text-neutral-400 shrink-0" />

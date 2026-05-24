@@ -59,6 +59,7 @@ const Background = () => {
         fill="none" 
         stroke="currentColor" 
         strokeWidth="1.2"
+        aria-hidden="true"
       >
         {/* Peak 1 (Top Right Peak) - High Density */}
         <path d="M 1130,220 C 1130,205 1140,195 1150,195 C 1160,195 1170,205 1170,220 C 1170,235 1160,245 1150,245 C 1140,245 1130,235 1130,220 Z" />

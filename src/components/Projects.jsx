@@ -425,7 +425,7 @@ const Projects = () => {
                     {project.techStack.map((tech, i) => (
                       <span 
                         key={i}
-                        className="px-2.5 py-1.5 text-[9px] font-bold tracking-wider uppercase rounded-lg bg-white/5 border border-white/10 text-neutral-300 flex items-center gap-1.5 hover:bg-white/10 transition-all border-hover:border-white/30"
+                        className="px-2.5 py-1.5 text-[9px] font-bold tracking-wider uppercase rounded-lg bg-white/5 border border-white/10 text-neutral-300 flex items-center gap-1.5 hover:bg-white/10 transition-all hover:border-white/30"
                       >
                         {iconMap[tech] && (
                           <img 
