@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Home', href: 'home' },
-  { name: 'About', href: 'about' },
-  { name: 'Skills', href: 'skills' },
-  { name: 'Projects', href: 'projects' },
-  { name: 'Experience', href: 'experience' },
-  { name: 'Blogs', href: 'blogs' },
-  { name: 'Contact', href: 'contact' },
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Blogs', href: '#blogs' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = ({ onOpenContact }) => {
@@ -46,14 +46,18 @@ const Navbar = ({ onOpenContact }) => {
         isScrolled ? 'bg-black/60 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 xl:px-12 2xl:px-16">
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="text-xl font-bold tracking-tighter text-white"
+            className="flex items-center"
           >
-            Jay<span className="text-neutral-500">Codes</span>
+            <img 
+              src="/jlogo.png" 
+              alt="Jay" 
+              className="h-8 w-auto hover:opacity-80 transition-opacity" 
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -63,7 +67,7 @@ const Navbar = ({ onOpenContact }) => {
                 key={link.name} 
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+                className="text-sm font-medium text-neutral-200 hover:text-white transition-colors"
               >
                 {link.name}
               </a>
@@ -101,7 +105,7 @@ const Navbar = ({ onOpenContact }) => {
                   key={link.name} 
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base font-medium text-neutral-400 hover:text-white transition-colors py-2"
+                  className="text-base font-medium text-neutral-200 hover:text-white transition-colors py-2"
                 >
                   {link.name}
                 </a>

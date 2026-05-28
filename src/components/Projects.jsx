@@ -147,7 +147,7 @@ const ProjectCarousel = ({ images, title }) => {
             }}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover select-none pointer-events-none grayscale-[20%] group-hover/carousel:grayscale-0 transition-all duration-700"
+            className="w-full h-full object-cover select-none pointer-events-none grayscale-[20%] group-hover/carousel:grayscale-0 brightness-50 group-hover/carousel:brightness-100 transition-all duration-700"
           />
         </AnimatePresence>
       </div>
@@ -327,7 +327,7 @@ const ProjectCarousel = ({ images, title }) => {
 const Projects = () => {
   return (
     <section id="projects" className="py-24 relative">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -360,7 +360,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ delay: Math.min(index * 0.08, 0.24), duration: 0.5, ease: 'easeOut' }}
-                className="group relative flex flex-col md:flex-row md:h-80 w-full rounded-3xl bg-neutral-900 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]"
+                className="group relative flex flex-col md:flex-row md:h-80 w-full rounded-3xl project-card-split-bg shadow-xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]"
               >
                 {/* Left Side - Image / Carousel */}
                 <div className="w-full md:w-[42%] lg:w-[38%] h-56 md:h-full relative overflow-hidden shrink-0 bg-neutral-800">

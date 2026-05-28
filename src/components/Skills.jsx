@@ -91,7 +91,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 relative z-10">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-6 xl:px-12 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}

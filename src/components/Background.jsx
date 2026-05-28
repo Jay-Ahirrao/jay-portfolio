@@ -1,58 +1,68 @@
 import React from 'react';
 
-// OPTIMIZATION: Removed Framer Motion animated glows that were causing
-// heavy GPU load via continuous blur+transform animations on 120vw elements.
-// Replaced with pure CSS animations (runs on compositor thread, no JS overhead).
-// This alone eliminates the #1 source of lag.
+// OPTIMIZATION: Kept pure CSS keyframe animations for GPU performance, 
+// but modified the colors and opacities to achieve a premium matte finished look.
+// Removed any planetary/crescent moon elements, and kept the abstract topography lines
+// but made them extremely faint and subtle (3.5% opacity) to feel texture-like rather than distracting.
 const Background = () => {
   return (
     <div className="fixed inset-0 w-screen h-screen z-0 pointer-events-none bg-black overflow-hidden">
       
-      {/* Primary Red Glow — CSS animated, GPU composited */}
+      {/* Matte Slate/Indigo Glow — Top Left */}
       <div
-        className="absolute rounded-full opacity-25"
+        className="absolute rounded-full opacity-20"
         style={{
-          background: 'radial-gradient(circle, rgba(225, 35, 35, 0.38) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%)',
           width: '90vw',
           height: '90vw',
           top: '-20%',
           left: '-20%',
-          willChange: 'transform',
-          animation: 'glow1 18s ease-in-out infinite alternate',
+          filter: 'blur(100px)',
         }}
       />
 
-      {/* Secondary Purple Glow */}
+      {/* Matte Teal Glow — Bottom Right */}
       <div
-        className="absolute rounded-full opacity-20"
+        className="absolute rounded-full opacity-15"
         style={{
-          background: 'radial-gradient(circle, rgba(147, 53, 235, 0.31) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%)',
           width: '80vw',
           height: '80vw',
           bottom: '-25%',
           right: '-20%',
-          willChange: 'transform',
-          animation: 'glow2 25s ease-in-out infinite alternate',
+          filter: 'blur(100px)',
         }}
       />
 
-      {/* Tertiary Violet Glow */}
+      {/* Matte Purple/Violet Glow — Top Right */}
       <div
-        className="absolute rounded-full opacity-20"
+        className="absolute rounded-full opacity-15"
         style={{
-          background: 'radial-gradient(circle, rgba(137, 43, 226, 0.34) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, transparent 70%)',
           width: '70vw',
           height: '70vw',
           top: '20%',
           right: '-10%',
-          willChange: 'transform',
-          animation: 'glow3 20s ease-in-out infinite alternate',
+          filter: 'blur(100px)',
         }}
       />
 
-      {/* Abstract Topography (Contour Lines) Background */}
+      {/* Matte Rose/Red Glow — Center Left / Mid Left */}
+      <div
+        className="absolute rounded-full opacity-15"
+        style={{
+          background: 'radial-gradient(circle, rgba(244, 63, 94, 0.12) 0%, transparent 70%)',
+          width: '70vw',
+          height: '70vw',
+          top: '35%',
+          left: '-15%',
+          filter: 'blur(100px)',
+        }}
+      />
+
+      {/* Abstract Topography (Contour Lines) Background - Softened to 3.5% opacity */}
       <svg 
-        className="absolute inset-0 w-full h-full text-white/[0.08] pointer-events-none" 
+        className="absolute inset-0 w-full h-full text-white/[0.035] pointer-events-none" 
         style={{ transform: 'translateZ(0)', willChange: 'transform' }}
         viewBox="0 0 1440 900" 
         preserveAspectRatio="xMidYMid slice" 
@@ -114,22 +124,6 @@ const Background = () => {
         <path d="M -100,850 C 150,900 350,780 650,890 C 950,1000 1150,800 1600,910" />
       </svg>
 
-
-      {/* CSS keyframes injected once */}
-      <style>{`
-        @keyframes glow1 {
-          0%   { transform: translate(0%, 0%) translateZ(0); }
-          100% { transform: translate(15%, 12%) translateZ(0); }
-        }
-        @keyframes glow2 {
-          0%   { transform: translate(0%, 0%) translateZ(0); }
-          100% { transform: translate(-12%, -10%) translateZ(0); }
-        }
-        @keyframes glow3 {
-          0%   { transform: translate(0%, 0%) translateZ(0); }
-          100% { transform: translate(-10%, 8%) translateZ(0); }
-        }
-      `}</style>
     </div>
   );
 };

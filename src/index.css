@@ -100,16 +100,15 @@
   .animate-gradient-text {
     background: linear-gradient(
       to right,
-      #ec4899, /* Pink */
-      #f97316, /* Orange */
-      #3b82f6, /* Blue */
-      #ec4899, /* Pink */
-      #8b5cf6, /* Purple */
-      #eab308, /* Yellow */
-      #ec4899, /* Pink */
-      #f97316  /* Orange */
+      #ff3366, /* Vibrant Pink */
+      #ff6600, /* Vibrant Orange */
+      #ffcc00, /* Bright Yellow */
+      #00f5d4, /* Vibrant Teal */
+      #00bbf9, /* Vibrant Blue */
+      #9b5de5, /* Vibrant Purple */
+      #ff3366  /* Loop Pink */
     );
-    background-size: 700% auto;
+    background-size: 600% auto;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -138,4 +137,79 @@
     animation: heroFadeIn 0.7s 0.2s ease-out both;
   }
 
+  .btn-gradient-hover {
+    background: #ffffff;
+    color: #000000;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient-hover:hover {
+    background: linear-gradient(
+      to right,
+      #ff3366,
+      #ff6600,
+      #ffcc00,
+      #00f5d4,
+      #00bbf9,
+      #9b5de5,
+      #ff3366
+    );
+    background-size: 600% auto;
+    color: #ffffff !important;
+    animation: textGradientLoop 6s linear infinite;
+    box-shadow: 0 0 25px rgba(255, 51, 102, 0.4);
+    border-color: transparent;
+  }
+
+  .social-btn-gradient-hover {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e5e5e5;
+  }
+
+  .social-btn-gradient-hover:hover {
+    background: linear-gradient(
+      to right,
+      #ff3366,
+      #ff6600,
+      #ffcc00,
+      #00f5d4,
+      #00bbf9,
+      #9b5de5,
+      #ff3366
+    );
+    background-size: 600% auto;
+    color: #ffffff !important;
+    animation: textGradientLoop 6s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+    border-color: transparent;
+  }
+
+  .project-card-split-bg {
+    background-color: #171717; /* Default fallback and mobile view */
+  }
+
+  @media (min-width: 768px) {
+    .project-card-split-bg {
+      background: linear-gradient(
+        55deg,
+        #171717 63%,
+        rgba(255, 255, 255, 0.04) 63%,
+        rgba(255, 255, 255, 0.04) 63.1%,
+        rgba(20, 20, 20, 0.7) 63.1%
+      );
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+  }
+
+  .bg-striped-edge {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.03) 3px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  }
 }

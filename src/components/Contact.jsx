@@ -6,7 +6,7 @@ import MagneticButton from './MagneticButton';
 const Contact = ({ onOpenContact }) => {
   return (
     <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const Contact = ({ onOpenContact }) => {
                 Touch
               </span>
             </h2>
-            <p className="text-neutral-400 text-lg max-w-lg mx-auto">
+            <p className="text-neutral-400 text-lg max-w-lg mx-auto leading-[1.8]">
               Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
           </div>
@@ -50,7 +50,7 @@ const Contact = ({ onOpenContact }) => {
                 href="https://github.com/Jay-Ahirrao" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center w-14 h-14 rounded-2xl bg-neutral-900 border border-white/5 text-neutral-400 hover:text-white hover:border-white/20 hover:bg-neutral-800 transition-all duration-300 shadow-xl"
+                className="group flex items-center justify-center w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 text-neutral-200 hover:text-white hover:border-white/40 hover:bg-white/5 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 shadow-xl"
                 title="GitHub"
               >
                 <Github size={24} className="group-hover:scale-110 transition-transform duration-300" />
@@ -62,7 +62,7 @@ const Contact = ({ onOpenContact }) => {
                 href="https://linkedin.com/in/jay-ahirrao" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center w-14 h-14 rounded-2xl bg-neutral-900 border border-white/5 text-neutral-400 hover:text-blue-400 hover:border-white/20 hover:bg-neutral-800 transition-all duration-300 shadow-xl"
+                className="group flex items-center justify-center w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 text-neutral-200 hover:text-[#0077b5] hover:border-[#0077b5]/50 hover:bg-[#0077b5]/10 hover:shadow-[0_0_20px_rgba(0,119,181,0.2)] transition-all duration-300 shadow-xl"
                 title="LinkedIn"
               >
                 <Linkedin size={24} className="group-hover:scale-110 transition-transform duration-300" />

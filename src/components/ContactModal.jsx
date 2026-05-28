@@ -93,13 +93,13 @@ const ContactModal = ({ isOpen, onClose }) => {
 
                 {/* Socials */}
                 <div className="flex items-center justify-center gap-8 pt-4">
-                  <a href="https://linkedin.com/in/jay-ahirrao" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                  <a href="https://linkedin.com/in/jay-ahirrao" target="_blank" className="text-neutral-300 hover:text-white transition-colors">
                     <Linkedin size={20} />
                   </a>
-                  <a href="https://x.com/messages/compose?recipient_name=@coder_jay_01" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                  <a href="https://x.com/messages/compose?recipient_name=@coder_jay_01" target="_blank" className="text-neutral-300 hover:text-white transition-colors">
                     <Twitter size={20} />
                   </a>
-                  <a href="https://www.instagram.com/direct/t/jay_ahirrao_44/" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                  <a href="https://www.instagram.com/direct/t/jay_ahirrao_44/" target="_blank" className="text-neutral-300 hover:text-white transition-colors">
                     <Instagram size={20} />
                   </a>
                 </div>

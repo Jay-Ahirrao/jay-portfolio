@@ -18,6 +18,10 @@ function App() {
     <div className="min-h-screen relative text-white selection:bg-neutral-800 selection:text-white font-sans antialiased">
       <Background />
       <div className="relative z-10">
+        {/* Page Edges Design (Left & Right Hashing) */}
+        <div className="fixed left-0 top-0 bottom-0 w-6 2xl:w-10 border-r border-white/[0.08] hidden xl:block bg-[#080808] z-20 pointer-events-none bg-striped-edge" />
+        <div className="fixed right-0 top-0 bottom-0 w-6 2xl:w-10 border-l border-white/[0.08] hidden xl:block bg-[#080808] z-20 pointer-events-none bg-striped-edge" />
+
         <Navbar onOpenContact={() => setIsModalOpen(true)} />
         <main>
           <Hero onOpenContact={() => setIsModalOpen(true)} />
